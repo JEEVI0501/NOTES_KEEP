@@ -1,6 +1,4 @@
-// Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-//import { getAnalytics } from "firebase/analytics";
 import "firebase/database";
 import { getFirestore } from "firebase/firestore";
 const firebaseConfig = {
@@ -13,11 +11,8 @@ const firebaseConfig = {
   measurementId: "G-GHECGS4PHP"
 };
 
-// Initialize Firebase
-//const db = firebaseConfig.database(); 
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
 export { db };
-//const analytics = getAnalytics(app);
 

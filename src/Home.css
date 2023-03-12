@@ -1,4 +1,5 @@
 .dispNotes{
+    border: 3px;
     border:6px;
     position: relative;
     width: 1000px;
@@ -31,10 +32,6 @@
 
 }
 
-.dispNotes{
-
-    border: 3px;
-}
 
 .star{
     float:right;

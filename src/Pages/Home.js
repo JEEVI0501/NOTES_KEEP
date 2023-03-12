@@ -4,7 +4,6 @@ import { db } from "../firebase";
 import Navbar from '../Components/Navbar';
 import  Offcanvas from '../Components/Offcanvas';
 import '../Home.css';
-import { AiFillStar } from 'react-icons/ai';
 import {FaTrash} from "react-icons/fa";
 import {
   collection,
@@ -17,7 +16,6 @@ import { Button} from "react-bootstrap"
 export default function Home() {
     
     const auth = getAuth();
-    // console.log("AddNotes");
     const [note, setNote] = useState([{id:"initial"}]);
     var noteStar=[];
     useEffect(() => 
@@ -25,12 +23,6 @@ export default function Home() {
         setNote(snapshot.docs.map((doc) => ({ ...doc.data(),id:doc.id})))
        ),
     []);
-
-    // const handleChange = (notes) => {
-    //     if(notes.starred === true){
-    //         noteStar.push(notes.id);
-    //     }
-    // }
     console.log(noteStar);
     const handleDelete = async (id) =>{
         await deleteDoc(doc(db, auth.currentUser.email ,id));
@@ -51,13 +43,7 @@ export default function Home() {
                       
                             <h3>{notes.title}</h3>
                             <p>{notes.notes}</p>
-
-                        {/* <Button className="star" onclick = {() => toggleStar(notes)}>  */}
                             <Button className="star" onClick = {() => toggleStar(notes)} > STAR</Button>
-                             {/* <AiFillStar roundedcircle size={15} />  */}
-                             {/* star */}
-                        {/* </Button> */}
-
                          <div className="del" onClick = {() => handleDelete(notes.id)}> 
                             <FaTrash size={15} />
                         </div>

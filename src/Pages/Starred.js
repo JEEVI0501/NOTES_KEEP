@@ -6,15 +6,13 @@ import  Offcanvas from '../Components/Offcanvas';
 import '../Home.css';
 import {
   collection,
-  onSnapshot,
-  doc
+  onSnapshot
 } from "firebase/firestore";
 export default function Starred() {
     
     const auth = getAuth();
-    // console.log("AddNotes");
     const [note, setNote] = useState([{id:"initial"}]);
-    var noteStar=[];
+    let noteStar=[];
     useEffect(() => 
        onSnapshot(collection(db,auth.currentUser.email),(snapshot) =>
         setNote(snapshot.docs.map((doc) => ({ ...doc.data(),id:doc.id})))
