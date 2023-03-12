@@ -17,7 +17,7 @@ export default function Home() {
     
     const auth = getAuth();
     const [note, setNote] = useState([{id:"initial"}]);
-    var noteStar=[];
+    let noteStar=[];
     useEffect(() => 
        onSnapshot(collection(db,auth.currentUser.email),(snapshot) =>
         setNote(snapshot.docs.map((doc) => ({ ...doc.data(),id:doc.id})))
