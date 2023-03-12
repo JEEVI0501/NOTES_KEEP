@@ -12,7 +12,7 @@ export default function Starred() {
     
     const auth = getAuth();
     const [note, setNote] = useState([{id:"initial"}]);
-    let noteStar=[];
+    const noteStar=[];
     useEffect(() => 
        onSnapshot(collection(db,auth.currentUser.email),(snapshot) =>
         setNote(snapshot.docs.map((doc) => ({ ...doc.data(),id:doc.id})))
