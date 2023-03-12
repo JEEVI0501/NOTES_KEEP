@@ -1,8 +1,9 @@
 import { initializeApp } from "firebase/app";
 import "firebase/database";
 import { getFirestore } from "firebase/firestore";
+
 const firebaseConfig = {
-  apiKey: "AIzaSyB59ai0y7ucmqM57lLw4c2_L7xfhBrStUg",
+  apiKey: process.env.FIREBASE_API_KEY,
   authDomain: "note-keep-aff67.firebaseapp.com",
   projectId: "note-keep-aff67",
   storageBucket: "note-keep-aff67.appspot.com",
