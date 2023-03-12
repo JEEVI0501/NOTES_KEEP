@@ -19,11 +19,6 @@ export default function Starred() {
        ),
     []);
 
-    const handleChange = (notes) => {
-        if(notes.starred === true){
-            noteStar.push(notes);
-        }
-    }
 
     console.log(noteStar);
     return(
@@ -32,7 +27,7 @@ export default function Starred() {
             <Offcanvas />
             <div className="dispNotes">
                 {note.map((notes) => (
-                     <div className="dispSingleNotes" key={notes.id} onChange={handleChange(notes)}>
+                     <div className="dispSingleNotes" key={notes.id}>
                       
                             <h3>{noteStar.title}</h3>
                             <p>{noteStar.note}</p>
